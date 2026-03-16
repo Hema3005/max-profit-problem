@@ -29,7 +29,7 @@ function maxProfit(n) {
                         findCombination = [{ T: t, P: p, C: c }]
                     }
                     else if (profit === maxProfit) {
-                        findCombination.unshift({ T: t, P: p, C: c })
+                        findCombination.push({ T: t, P: p, C: c })
                     }
                 }
             }
@@ -38,6 +38,7 @@ function maxProfit(n) {
 
     console.log("Earnings: $", maxProfit)
     console.log("Solutions")
+    findCombination.reverse()
     findCombination.forEach((value , index)=>{
         console.log(`${index+1}. T:${value.T} P:${value.P} C:${value.C}`)
     })
