@@ -5,7 +5,7 @@ function maxProfit(n) {
         for (let p = 0; p <= Math.floor(n / 4); p++) {
             for (let c = 0; c <= Math.floor(n / 10); c++) {
                 let unit = t * 5 + p * 4 + c * 10
-                if (unit <= n) {
+                if (unit < n) {
                     let currentUnit = 0
                     let profit = 0
                     // theatres
@@ -29,7 +29,7 @@ function maxProfit(n) {
                         findCombination = [{ T: t, P: p, C: c }]
                     }
                     else if (profit === maxProfit) {
-                        findCombination.push({ T: t, P: p, C: c })
+                        findCombination.unshift({ T: t, P: p, C: c })
                     }
                 }
             }
